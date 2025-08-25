@@ -15,6 +15,7 @@ def get_info(id, password, room):
 def discomfort_index(temperature, humidity):
     return 0.81 * temperature + 0.01 * humidity * (0.99 * temperature - 14.3) + 46.3
 
+
 def display_result(data):
     try:
         room_num = data[1]['room_num']
@@ -33,4 +34,3 @@ def display_result(data):
             print("外部ネットワークではサービスを利用することはできません。")
         else:
             print(e)
-
