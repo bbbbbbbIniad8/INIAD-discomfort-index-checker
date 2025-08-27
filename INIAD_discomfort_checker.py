@@ -32,13 +32,10 @@ def display_result(data):
         print(f"不快度指数:{result}\n")
 
     except KeyError as e:
-        print(data)
         if data['status'] == 'error' and data['description'] == 'Service available only on INIAD LAN':
             print("外部ネットワークではサービスを利用することはできません。")
         elif data['status'] == 'error' and data['description'] == 'Sensors not accessible':
             print("この教室のセンサーにはアクセスできません。")
         elif data['status'] == 'error' and data['description'] == "'username' or 'password' is invalid":
             print("与えられたユーザーネーム、もしくはパスワードに誤りがあります。")
-        
-        else:
-            print(e)
+
